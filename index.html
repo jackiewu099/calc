@@ -3,11 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style src="style.css"></style>
+    <link rel="stylesheet" href="style.css"> <!-- Corrected this line -->
     <script src="calc.js"></script>
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
 <body>
-    
+    <div class="calculator">
+        <div class="display"></div>
+        <div class="numpad">
+            <div class="numrow">
+                <div class="number" id="AC-btn">AC</div>
+                <div class="number">+/-</div>
+                <div class="number">%</div>
+                <div class="number rightcol">÷</div>
+            </div>
+            <div class="numrow">
+                <div class="number">7</div>
+                <div class="number">8</div>
+                <div class="number">9</div>
+                <div class="number rightcol">*</div>
+            </div>
+            <div class="numrow">
+                <div class="number">4</div>
+                <div class="number">5</div>
+                <div class="number">6</div>
+                <div class="number rightcol">-</div>
+            </div>
+            <div class="numrow">
+                <div class="number">1</div>
+                <div class="number">2</div>
+                <div class="number">3</div>
+                <div class="number rightcol">+</div>
+            </div>
+            <div class="numrow">
+                <div class="number" id="zero-btn">0</div>
+                <div class="number">.</div>
+                <div class="number rightcol">=</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
