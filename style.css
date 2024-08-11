@@ -3,6 +3,7 @@ body {
     height:100vh;
     justify-content:center;
     align-items: center;
+    background-color: rgb(55, 53, 53);
 }
 
 .calculator {
@@ -24,7 +25,7 @@ body {
 .display {
     display:flex;
     flex-direction:column;
-    background-color:rgb(131, 128, 128);
+    /* background-color:rgb(131, 128, 128); */
     border-radius:15px;
     box-sizing:border-box;
     height:160px;
@@ -61,7 +62,7 @@ body {
     margin-bottom:5px;
 }
 
-.number {
+.number, .data-operator, .AC-btn, .data-equal, .DEL-btn {
     color:black;
     font-size:40px;
     width:25%;
@@ -70,12 +71,12 @@ body {
     justify-content: center;
     align-items: center;
     border-radius:15px;
+    cursor: pointer;
 }
-.rightcol {
+.data-operator, .data-equal {
     background-color:rgb(242, 172, 43);
-    color:white;
+    color:black;
 }
 #zero-btn {
     width:54%;
 }
-
