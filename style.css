@@ -62,7 +62,7 @@ body {
     margin-bottom:5px;
 }
 
-.number, .data-operator, .AC-btn, .data-equal, .DEL-btn {
+.number, .data-operator, .AC-btn, .data-equal, .DEL-btn, .decimal-btn {
     color:black;
     font-size:40px;
     width:25%;
