@@ -80,3 +80,8 @@ body {
 #zero-btn {
     width:54%;
 }
+
+.number:active, .data-operator:active, .AC-btn:active, .data-equal:active, .DEL-btn:active, .decimal-btn:active {
+    transform: scale(0.95);
+    background-color: #858181;
+}
