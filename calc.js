@@ -41,14 +41,16 @@ function operate(num1, num2, operation) {
     }
 }
 
-//Update display
+
 let previousValue ="";
 let currentValue ="";
 let operator = "";
 let currentDisplay = "";
+let lastOperationWasEqual = false; // Checks if last operation was equal
 
+
+//Updates currentDisplay and currentValue when you click a number button
 const buttons = document.querySelectorAll('.number');
-//Updates currentDisplay and currentValue
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         if (operator != "" && previousValue == "") {
@@ -88,8 +90,10 @@ equalBtn.addEventListener('click', () => {
         currentValue = result;
         previousValue = "";
         operator = "";  // Clear the operator after calculation
+        lastOperationWasEqual = true;  // Set the flag to true after an equals operation
     }
 });
+
 
 const clearBtn = document.querySelector('.AC-btn');
 clearBtn.addEventListener('click', ()=> {
@@ -101,12 +105,21 @@ clearBtn.addEventListener('click', ()=> {
 
 const decBtn = document.querySelector('.decimal-btn');
 decBtn.addEventListener('click', ()  => {
-    if (currentValue.includes('.')) {
-    }
-    else {
-        currentDisplay.textContent+= '.';
+    if (lastOperationWasEqual) {
+        // Reset the display and currentValue to '0.' if the last operation was equals
+        currentDisplay.textContent = "0.";
+        currentValue = "0.";
+        lastOperationWasEqual = false;  // Reset the flag
+    } else if (!currentValue.includes('.')) {
+        currentDisplay.textContent += '.';
         currentValue = currentDisplay.textContent;
     }
+});
+
+const delBtn = document.querySelector('.DEL-btn');
+delBtn.addEventListener('click', () => {
+    currentValue = currentValue.slice(0, -1);
+    currentDisplay.textContent = currentValue;
 });
 
 
