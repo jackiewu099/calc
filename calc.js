@@ -122,6 +122,45 @@ delBtn.addEventListener('click', () => {
     currentDisplay.textContent = currentValue;
 });
 
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+
+    // Handle number keys
+    if (!isNaN(key) && key !== ' ') {
+        // Find the button with the corresponding number
+        document.querySelectorAll('.number').forEach(button => {
+            if (button.textContent === key) {
+                button.click();
+            }
+        });
+    } 
+    // Handle operator keys
+    else if (['+', '-', '*', '/'].includes(key)) {
+        let operatorSymbol = key;
+        if (key === '/') operatorSymbol = '÷'; // Map '/' to '÷'
+
+        document.querySelectorAll('.data-operator').forEach(button => {
+            if (button.textContent === operatorSymbol) {
+                button.click();
+            }
+        });
+    } 
+    // Handle Enter key for equals
+    else if (key === 'Enter') {
+        equalBtn.click();
+    }
+    // Handle Backspace key for delete
+    else if (key === 'Backspace') {
+        delBtn.click();
+    }
+    // Handle Escape key for clear
+    else if (key === 'Escape') {
+        clearBtn.click();
+    }
+});
+
+
+
 
 
 
